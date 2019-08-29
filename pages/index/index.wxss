@@ -1,0 +1,163 @@
+/**index.wxss**/
+.container{
+   background: radial-gradient(circle at 100vw 0, rgb(27, 42, 66), rgb(9, 9, 9));
+}
+.userinfo {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  margin-top: 0;
+  padding-top: 70rpx;
+  width: 100%;
+  height: 300rpx;
+
+  /* background-color: rgba(0, 0, 0, 0.9); */
+}
+
+.userinfo-avatar {
+  width: 128rpx;
+  height: 128rpx;
+  margin: 20rpx;
+  border-radius: 50%;
+}
+
+.userinfo-nickname {
+  color: white;
+}
+
+.usermotto {
+  margin-top: 150px;
+}
+
+movable-area{
+  width: 100%;
+  height: 700rpx;
+}
+
+.launch-log{
+  font-size: 15px;
+  height: 30px;
+  margin-top: 20px;
+}
+
+.coffee-container{
+  width: 100%;
+  height: calc(100vh - 360rpx);
+  overflow: hidden;
+  /* background-color: rgba(0, 0, 0, 0.9); */
+}
+
+.coffee {
+  margin-top: 500rpx;
+	display: flex;
+	flex-direction: column;
+	align-items: center;
+	height: calc(3.5em + 0.5em + 1em);
+	position: relative;
+}
+
+.coffee .cup {
+	width: 5em;
+	height: 9em;
+	background-color: white;
+	border-bottom-left-radius: 1.5em;
+	border-bottom-right-radius: 1.5em;
+	position: relative;
+}
+
+.coffee .cup::before {
+	content: '';
+	position: absolute;
+	width: 100%;
+	height: 2em;
+	background-color: chocolate;
+	border: 0.5em solid white;
+	box-sizing: border-box;
+	border-radius: 50%;
+	top: -1em;
+	box-shadow: inset 0 0 1em rgba(0, 0, 0, 0.5);
+}
+
+.coffee .cup::after {
+	content: '';
+	position: absolute;
+	width: 1em;
+	height: 1em;
+	border: 0.5em solid white;
+	border-radius: 50%;
+	top: 15%;
+	left: 80%;
+}
+
+.coffee .plate {
+  display: none;
+	width: 8em;
+	height: 0.5em;
+	background-color: white;
+	border-bottom-left-radius: 50%;
+	border-bottom-right-radius: 50%;
+	position: absolute;
+	bottom: -1px;
+}
+
+.coffee .vapor {
+	width: 5em;
+	height: 2em;
+	display: flex;
+	justify-content: space-between;
+}
+
+.coffee .vapor span {
+	width: 0.1em;
+	min-width: 1px;
+	background-color: white;
+	animation: evaporation 2s linear infinite;
+	filter: opacity(0);
+}
+
+.coffee .vapor span:nth-child(1) {
+	animation-delay: 0.5s;
+}
+
+.coffee .vapor span:nth-child(2) {
+	animation-delay: 0.1s;
+}
+
+.coffee .vapor span:nth-child(3) {
+	animation-delay: 0.3s;
+}
+
+.coffee .vapor span:nth-child(4) {
+	animation-delay: 0.4s;
+}
+
+.coffee .vapor span:nth-child(5) {
+	animation-delay: 0.2s;
+}
+
+@keyframes evaporation {
+	from {
+		transform: translateY(0);
+		filter: opacity(1) blur(0.2em);
+	}
+
+	to {
+		transform: translateY(-4em);
+		filter: opacity(0) blur(0.4em);
+	}
+}
+
+
+.dra {
+  stroke-dasharray: 1124;
+  animation: draw 2s alternate-reverse infinite;
+}
+
+@keyframes draw {
+  from {
+    stroke-dashoffset: 0;
+  }
+  to {
+    stroke-dashoffset: 1124;
+  }
+}

@@ -1,0 +1,95 @@
+<!--pages/todo-list/todo-list.wxml-->
+<view class='head'>
+  <input placeholder='输入你要做的事情' bindinput='inputValue' placeholder-class="place-holder" value='{{inputValue}}'></input>
+  <button bindtap='addToList' class='submit'>添加</button>
+</view>
+
+<!-- <view class='container'> -->
+
+  <view class='titleBar swiper-tab'>
+    <view class="title swiper-tab-list {{currentTab==0 ? 'on' : ''}}" data-current="0" bindtap="swichNav">任务列表</view>
+    <view class="title swiper-tab-list {{currentTab==1 ? 'on' : ''}}" data-current="1" bindtap="swichNav">未完成</view>
+    <view class="title swiper-tab-list {{currentTab==2 ? 'on' : ''}}" data-current="2" bindtap="swichNav">已完成</view>
+  </view>
+
+<swiper current="{{currentTab}}" bindchange="bindChange" style="height:{{height}}rpx" duration='100'>
+
+  <swiper-item catchtouchmove="catchTouchMove">
+    <scroll-view scroll-y="true">
+      <view wx:for="{{todos}}" wx:key="{{index}}" data-index="{{index}}" class='todo-item' >
+
+          <view data-index="{{index}}" bindtouchstart="touchS" bindtouchmove="touchM" bindtouchend="touchE" style='{{item.txtStyle}}' class='todo' hover-class='todo-hover'>
+
+            <view class='todo-txt' data-index="{{index}}">{{item.txt}}</view>
+            <view>{{item.setTime}}</view>
+            <view class='star'>
+              <image src='{{star}}' bindtap='starIt' data-index="{{index}}" wx:if="{{todos[index].starOrNot == false}}"></image>
+              <image src='{{starGold}}' bindtap='starIt' data-index="{{index}}" wx:if="{{todos[index].starOrNot == true}}"></image>
+            </view>
+            <view class='finish'>
+              <image src='{{tick}}' bindtap='tickIt' data-index="{{index}}" wx:if="{{todos[index].finish == false}}"></image>
+              <image src='{{tickGreen}}' bindtap='tickIt' data-index="{{index}}" wx:if="{{todos[index].finish == true}}"></image>
+            </view>
+
+          </view>
+
+          <view class='delete' bindtap='delete' data-index="{{index}}">删除</view>
+
+      </view>
+    </scroll-view>
+  </swiper-item>
+
+  <swiper-item catchtouchmove="catchTouchMove">
+    <scroll-view scroll-y="true">
+      <view wx:for="{{todos}}" wx:if="{{todos[index].finish == false}}" wx:key="{{index}}" data-index="{{index}}" class='todo-item' >
+
+          <view data-index="{{index}}" bindtouchstart="touchS" bindtouchmove="touchM" bindtouchend="touchE" style='{{item.txtStyle}}' class='todo' hover-class='todo-hover'>
+
+            <view class='todo-txt' data-index="{{index}}">{{item.txt}}</view>
+            <view>{{item.setTime}}</view>
+            <view class='star'>
+              <image src='{{star}}' bindtap='starIt' data-index="{{index}}" wx:if="{{todos[index].starOrNot == false}}"></image>
+              <image src='{{starGold}}' bindtap='starIt' data-index="{{index}}" wx:if="{{todos[index].starOrNot == true}}"></image>
+            </view>
+            <view class='finish'>
+              <image src='{{tick}}' bindtap='tickIt' data-index="{{index}}" wx:if="{{todos[index].finish == false}}"></image>
+              <image src='{{tickGreen}}' bindtap='tickIt' data-index="{{index}}" wx:if="{{todos[index].finish == true}}"></image>
+            </view>
+
+          </view>
+
+          <view class='delete' bindtap='delete' data-index="{{index}}">删除</view>
+
+      </view>
+    </scroll-view>
+  </swiper-item>
+
+  <swiper-item catchtouchmove="catchTouchMove">
+    <scroll-view scroll-y="true">
+      <view wx:for="{{todos}}" wx:if="{{todos[index].finish == true}}" wx:key="{{index}}" data-index="{{index}}" class='todo-item' >
+
+          <view data-index="{{index}}" bindtouchstart="touchS" bindtouchmove="touchM" bindtouchend="touchE" style='{{item.txtStyle}}' class='todo' hover-class='todo-hover'>
+
+            <view class='todo-txt' data-index="{{index}}">{{item.txt}}</view>
+            <view>{{item.setTime}}</view>
+            <view class='star'>
+              <image src='{{star}}' bindtap='starIt' data-index="{{index}}" wx:if="{{todos[index].starOrNot == false}}"></image>
+              <image src='{{starGold}}' bindtap='starIt' data-index="{{index}}" wx:if="{{todos[index].starOrNot == true}}"></image>
+            </view>
+            <view class='finish'>
+              <image src='{{tick}}' bindtap='tickIt' data-index="{{index}}" wx:if="{{todos[index].finish == false}}"></image>
+              <image src='{{tickGreen}}' bindtap='tickIt' data-index="{{index}}" wx:if="{{todos[index].finish == true}}"></image>
+            </view>
+
+          </view>
+
+          <view class='delete' bindtap='delete' data-index="{{index}}">删除</view>
+
+      </view>
+    </scroll-view>
+  </swiper-item>
+
+</swiper>
+
+
+<!-- </view> -->

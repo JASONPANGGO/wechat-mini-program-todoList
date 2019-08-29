@@ -1,0 +1,146 @@
+/* pages/todo-list/todo-list.wxss */
+.head{
+  width: 100%;
+  height: 150rpx;
+  margin: 0;
+  padding: 0;
+  background-color: black;
+}
+
+.container{
+  clear: right;
+  clear: left;
+}
+
+input{
+  float: left;
+  border: 1px solid rgb(255, 255, 255);
+  border-radius: 10rpx;
+  width: 500rpx;
+  height: 80rpx;
+  padding: 10rpx;
+  margin-top: 20rpx;
+  margin-left: 20rpx;
+  color: white;
+}
+
+.place-holder{
+  color: white;
+  text-align: center;
+}
+
+.submit{
+  float: right;
+  margin-top: 20rpx;
+  margin-right: 20rpx;
+  width: 150rpx;
+  height: 100rpx;
+  background-color: rgb(255, 255, 255);
+  color: rgb(0, 0, 0);
+  line-height: 100rpx;
+  font-weight: bold;
+  font-size: 40rpx;
+}
+
+.titleBar{
+  height: 100rpx;
+  width: 100%;
+ 
+}
+
+swiper{
+  overflow: scroll;
+}
+
+/* swiper-item{
+  height: 500px;
+} */
+
+.on{
+      font-weight: bold;
+      border-bottom: 2px solid black;
+}
+
+.title{
+    float: left;
+    margin-top: 20rpx;
+    width: 33%;
+    text-align: center;
+    padding-bottom: 20rpx;
+}
+
+.todo-item{
+  margin-top: 0rpx;
+  border-bottom:1px solid rgba(0,0,0,0.1);
+  width: 100%;
+  height: 100rpx;
+  line-height: 80rpx;
+  padding: 0;
+  transition: 0.5s;
+}
+
+.todo-txt{
+  float: left;
+  padding: 10rpx;
+  padding-left: 30rpx;
+}
+
+.todo{
+  position: absolute;
+  width: 100%;
+  height: 100rpx;
+  z-index: 1;
+  background-color: white;
+  transition: 0.5s;
+}
+
+.todo-hover{
+  background-color: rgb(201, 201, 201);
+  transition: .2s;
+}
+
+.finish image{
+  width: 40rpx;
+  height: 40rpx;
+}
+
+.finish{
+  float: right;
+  margin-top: 20rpx;
+  margin-right: 100rpx;
+}
+
+.star{
+  transition: 0.5s;
+  position: absolute;
+  width: 50rpx;
+  height: 50rpx;
+  float: right;
+  margin-top: 20rpx;
+  margin-right: 20rpx;
+  right: 0;
+}
+
+.delete{
+  position: absolute;
+  right: 0;
+  width: 150rpx;
+  height: 97rpx;
+  float: right;
+  background-color: red;
+  color: white;
+  margin-right: 0rpx;
+  font-size: 30rpx;
+  line-height: 100rpx;
+  text-align: center;
+  margin-top: 0.5rpx;
+  /* border-bottom: 1px solid rgba(0,0,0,0.0); */
+  z-index: 0;
+}
+
+
+
+.star image{
+  max-width: 50rpx;
+  max-height: 50rpx;
+}
